@@ -1,7 +1,15 @@
+.container {
+  max-width: 1240px; /* ширина контента */
+  margin: 0 auto; /* выравнивание по центру */
+  padding: 0 20px; /* отступы слева и справа */
+  width: 100%;
+}
+
 .blackContainer {
   background-color: black;
   height: 38px;
   padding-top: 8px;
+  margin-bottom: 24px;
 }
 
 .text {
@@ -20,12 +28,56 @@
 
 .navContainer {
   display: flex;
+  height: 48px;
+  align-items: center;
+  gap: 40px;
 }
 
 .navList {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.linkText {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
 }
 
 .linkText:visited {
   color: black;
+  
+}
+
+.title {
+  font-family: "Anton", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: #000;
+  letter-spacing: 2px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: black;
+}
+.input {
+  outline: none;
+  border-radius: 62px;
+  padding: 12px 16px;
+  width: 577px;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.4);
+  background: #f0f0f0;
+}
+
+.input:enabled {
+  border-color: transparent;
 }
