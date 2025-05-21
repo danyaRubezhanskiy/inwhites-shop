@@ -2,6 +2,7 @@ import React from "react";
 import css from "./Header.module.css";
 import BlackHeader from "./BlackHeader";
 import clsx from "clsx";
+import DropDown from "../DropDown";
 
 const Header = () => {
   return (
@@ -13,9 +14,7 @@ const Header = () => {
           <nav className={css.nav}>
             <ul className={css.navList}>
               <li>
-                <a className={css.linkText} href="">
-                  Shop
-                </a>
+                <DropDown />
               </li>
               <li>
                 <a className={css.linkText} href="">
@@ -39,12 +38,14 @@ const Header = () => {
             placeholder="Search for products..."
             type="text"
           />
-          <svg className={css.icon} width="24" height="24" aria-hidden="true">
-            <use href="../../../public/accets/icons/symbol-defs.svg#icon-Frame-1" />
-          </svg>
-          <svg className={css.icon} width="24" height="24" aria-hidden="true">
-            <use href="../../../public/accets/icons/symbol-defs.svg#icon-Frame" />
-          </svg>
+          <div className={css.iconsContainer}>
+            <svg className={css.icon} width="24" height="24" aria-hidden="true">
+              <use href="../../../public/accets/icons/symbol-defs.svg#icon-Frame-1" />
+            </svg>
+            <svg className={css.icon} width="24" height="24" aria-hidden="true">
+              <use href="../../../public/accets/icons/symbol-defs.svg#icon-Frame" />
+            </svg>
+          </div>
         </div>
       </header>
     </div>

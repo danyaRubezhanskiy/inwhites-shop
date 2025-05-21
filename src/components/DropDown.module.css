@@ -1,0 +1,58 @@
+.dropContainer {
+  position: relative;
+  width: 60px;
+}
+
+.nav {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  overflow: hidden;
+
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  list-style-type: none;
+}
+
+.navOpen {
+  max-height: 500px; /* побольше, чтобы вместить всё содержимое */
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.navLink {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+}
+
+.navLink:visited {
+  color: black;
+}
+
+.btn {
+  font-family: "Satoshi", sans-serif;
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 16px;
+  
+}
+
+.arrow {
+  display: inline-block;
+  font-family: "Satoshi", sans-serif;
+  font-size: 11px;
+  transition: transform 0.2s ease;
+}
+
+.open {
+  transform: rotate(180deg);
+}
