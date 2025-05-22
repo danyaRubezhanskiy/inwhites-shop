@@ -1,0 +1,61 @@
+.heroContainer {
+  margin-top: 24px;
+  height: 663px;
+  background-color: bisque;
+  padding-top: 103px;
+}
+
+.title {
+  font-family: "Anton", sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 100%;
+  color: #000;
+  width: 577px;
+  letter-spacing: 2px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 137%;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Satoshi", sans-serif;
+  margin-top: 32px;
+  width: 545px;
+}
+
+.btn {
+  border-radius: 62px;
+  width: 210px;
+  height: 52px;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  margin-top: 47px;
+  background: #000;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.list {
+  width: 596px;
+  display: flex;
+  gap: 64px;
+  list-style-type: none;
+}
+.itemTitle {
+  font-weight: 700;
+  font-size: 40px;
+  color: #000;
+}
+
+.itemText {
+  font-family: "Satoshi", sans-serif;
+  font-size: 16px;
+  line-height: 137%;
+  color: rgba(0, 0, 0, 0.6);
+}
