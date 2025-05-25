@@ -8,21 +8,49 @@ const BlackSection = () => {
       <div className={container.container}>
         <ul className={css.list}>
           <li>
-            <svg className={css.icon} width="24" height="24" aria-hidden="true">
+            <svg
+              className={css.iconVersace}
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
+              <use href="../../../../public/icons/Brands.svg#Versace" />
+            </svg>
+          </li>
+          <li>
+            <svg
+              className={css.iconZara}
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
+              <use href="../../../../public/icons/Brands.svg#Zara" />
+            </svg>
+          </li>
+          <li>
+            <svg
+              className={css.iconGucci}
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
               <use href="../../../../public/icons/Brands.svg#Gucci" />
             </svg>
           </li>
           <li>
-            <a href=""></a>
+            <svg
+              className={css.iconPrada}
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
+              <use href="../../../../public/icons/Brands.svg#Prada" />
+            </svg>
           </li>
           <li>
-            <a href=""></a>
-          </li>
-          <li>
-            <a href=""></a>
-          </li>
-          <li>
-            <a href=""></a>
+            <svg className={css.iconCalvinKlein} width="24" height="24" aria-hidden="true">
+              <use href="../../../../public/icons/Brands.svg#CalvinKlein" />
+            </svg>
           </li>
         </ul>
       </div>
