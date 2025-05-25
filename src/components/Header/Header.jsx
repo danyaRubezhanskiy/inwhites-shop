@@ -33,11 +33,14 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          <input
-            className={css.input}
-            placeholder="Search for products..."
-            type="text"
-          />
+          <form>
+            <input
+              className={css.input}
+              placeholder="Search for products..."
+              type="text"
+            />
+          </form>
+
           <div className={css.iconsContainer}>
             <svg className={css.icon} width="24" height="24" aria-hidden="true">
               <use href="../../../public/accets/icons/symbol-defs.svg#icon-Frame-1" />

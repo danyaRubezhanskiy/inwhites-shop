@@ -1,9 +1,18 @@
 .heroContainer {
   margin-top: 24px;
   height: 663px;
-  background-color: bisque;
-  padding-top: 103px;
 }
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+
+  width: 100%;
+  background-image: url(../../../public/accets/img/Rectangle.jpg);
+  background-size: cover;
+}
+
+
 
 .title {
   font-family: "Anton", sans-serif;
@@ -39,6 +48,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 48px;
+  cursor: pointer;
 }
 
 .list {
@@ -46,6 +56,7 @@
   display: flex;
   gap: 64px;
   list-style-type: none;
+
 }
 .itemTitle {
   font-weight: 700;
@@ -58,4 +69,10 @@
   font-size: 16px;
   line-height: 137%;
   color: rgba(0, 0, 0, 0.6);
+}
+
+.img {
+  width: 100%;
+  height: auto; /* сохраняет пропорции */
+  object-fit: cover; /* если нужно, чтобы она обрезалась, но заполняла */
 }
