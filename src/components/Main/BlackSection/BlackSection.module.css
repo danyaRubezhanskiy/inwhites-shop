@@ -1,0 +1,17 @@
+.blackSection {
+  margin-top: 25px;
+  background-color: black;
+  height: 122px;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  list-style-type: none;
+}
+
+.icon {
+  width: 166px;
+  height: 33px;
+  fill: rgb(255, 255, 255);
+}

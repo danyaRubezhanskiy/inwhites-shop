@@ -1,11 +1,31 @@
 import React from "react";
-
-import container from '.'
+import css from "./BlackSection.module.css";
+import container from "../../../container.module.css";
 
 const BlackSection = () => {
   return (
-    <section className={container.container}>
-      <div></div>
+    <section className={css.blackSection}>
+      <div className={container.container}>
+        <ul className={css.list}>
+          <li>
+            <svg className={css.icon} width="24" height="24" aria-hidden="true">
+              <use href="../../../../public/icons/Brands.svg#Gucci" />
+            </svg>
+          </li>
+          <li>
+            <a href=""></a>
+          </li>
+          <li>
+            <a href=""></a>
+          </li>
+          <li>
+            <a href=""></a>
+          </li>
+          <li>
+            <a href=""></a>
+          </li>
+        </ul>
+      </div>
     </section>
   );
 };

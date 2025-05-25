@@ -43,10 +43,10 @@ const Header = () => {
 
           <div className={css.iconsContainer}>
             <svg className={css.icon} width="24" height="24" aria-hidden="true">
-              <use href="../../../public/accets/icons/symbol-defs.svg#icon-Frame-1" />
+              <use href="../../../public/icons/symbol-defs.svg#icon-Frame-1" />
             </svg>
             <svg className={css.icon} width="24" height="24" aria-hidden="true">
-              <use href="../../../public/accets/icons/symbol-defs.svg#icon-Frame" />
+              <use href="../../../public/icons/symbol-defs.svg#icon-Frame" />
             </svg>
           </div>
         </div>
