@@ -6,12 +6,36 @@
 }
 
 .list {
+  height: 122px;
   display: flex;
   list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  gap: 106px;
 }
 
-.icon {
+.iconVersace {
   width: 166px;
+  height: 33px;
+  fill: rgb(255, 255, 255);
+}
+.iconZara {
+  width: 91px;
+  height: 38px;
+  fill: rgb(255, 255, 255);
+}
+.iconGucci {
+  width: 156px;
+  height: 36px;
+  fill: rgb(255, 255, 255);
+}
+.iconPrada {
+  width: 194px;
+  height: 32px;
+  fill: rgb(255, 255, 255);
+}
+.iconCalvinKlein {
+  width: 206px;
   height: 33px;
   fill: rgb(255, 255, 255);
 }
