@@ -2,19 +2,43 @@ import React from "react";
 import css from "./Header.module.css";
 import BlackHeader from "./BlackHeader";
 import clsx from "clsx";
-import DropDown from "../DropDown";
+import { Dropdown, Menu, Space } from "antd";
 
 const Header = () => {
+  const items = [
+    {
+      label: <a href="ht">Prada</a>,
+      key: "0",
+    },
+    {
+      label: <a href="">Gucci</a>,
+      key: "1",
+    },
+    {
+      type: "divider",
+    },
+    {
+      label: <a href="">Versace</a>,
+      key: "2",
+    },
+    {
+      label: <a href="">Zara</a>,
+      key: "3",
+    },
+  ];
+
   return (
     <div>
       <header>
-        <BlackHeader />
+        <BlackHeader arrow={true} />
         <div className={clsx(css.navContainer, css.container)}>
           <h2 className={css.title}>INWH.SHOP</h2>
           <nav className={css.nav}>
             <ul className={css.navList}>
               <li>
-                <DropDown />
+                <a className={css.linkText} href="">
+                  Brands
+                </a>
               </li>
               <li>
                 <a className={css.linkText} href="">
@@ -27,9 +51,11 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <a className={css.linkText} href="">
-                  Brands
-                </a>
+                <Dropdown arrow={true} menu={{ items }} trigger={['click']}>
+                  <a onClick={(e) => e.preventDefault()}>
+                    <Space className={css.shopBtn}>Shop</Space>
+                  </a>
+                </Dropdown>
               </li>
             </ul>
           </nav>

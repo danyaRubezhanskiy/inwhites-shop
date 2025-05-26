@@ -51,14 +51,12 @@
 
 .linkText:visited {
   color: black;
-  
 }
 
-.iconsContainer{
+.iconsContainer {
   display: flex;
   gap: 14px;
 }
-
 
 .title {
   font-family: "Anton", sans-serif;
@@ -66,6 +64,12 @@
   font-size: 32px;
   color: #000;
   letter-spacing: 2px;
+}
+
+.shopBtn {
+  font-family: "Satoshi", sans-serif;
+  cursor: pointer;
+  font-weight: 400;
 }
 
 .icon {

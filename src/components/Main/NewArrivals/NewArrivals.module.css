@@ -14,11 +14,12 @@
   display: flex;
   gap: 20px;
   margin-top: 55px;
+  flex-wrap: wrap;
+  width: 1240px;
 }
 
 .card {
   width: 295px;
-  height: 298px;
   height: 250px;
   overflow: hidden;
   display: flex;
