@@ -1,9 +1,9 @@
-import React from "react";
 import css from "./Header.module.css";
 import BlackHeader from "./BlackHeader";
 import clsx from "clsx";
 import { Dropdown, Menu, Space } from "antd";
-
+import { DownOutlined } from "@ant-design/icons";
+import "./CustomDropdown.css";
 const Header = () => {
   const items = [
     {
@@ -13,9 +13,6 @@ const Header = () => {
     {
       label: <a href="">Gucci</a>,
       key: "1",
-    },
-    {
-      type: "divider",
     },
     {
       label: <a href="">Versace</a>,
@@ -51,9 +48,15 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <Dropdown arrow={true} menu={{ items }} trigger={['click']}>
+                <Dropdown
+                  overlayClassName="custom-dropdown"
+                  menu={{ items }}
+                  trigger={["click"]}
+                >
                   <a onClick={(e) => e.preventDefault()}>
-                    <Space className={css.shopBtn}>Shop</Space>
+                    <Space size={4} className={css.shopBtn}>
+                      Shop <DownOutlined style={{ fontSize: "10px" }} />
+                    </Space>
                   </a>
                 </Dropdown>
               </li>

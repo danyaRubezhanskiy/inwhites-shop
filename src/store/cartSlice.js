@@ -3,6 +3,7 @@ import Axios from "axios";
 
 const initialState = {
   items: [],
+  topSelling: [],
   loading: false,
   error: null,
 };
@@ -16,8 +17,21 @@ export const getAllProducts = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const { data } = await axios.get("/products");
-      console.log(data)
+      console.log(data);
       return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getTopSelling = createAsyncThunk(
+  "products/getTopSelling",
+  async (_, thunkApi) => {
+    try {
+      const { data } = await axios.get("/products");
+      const sortedData = data.sort((a, b) => b.rating.rate - a.rating.rate);
+      return sortedData.slice(0,8);
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }
@@ -40,6 +54,19 @@ const cartSlice = createSlice({
         state.error = null;
       })
       .addCase(getAllProducts.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(getTopSelling.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getTopSelling.fulfilled, (state, action) => {
+        state.loading = false;
+        state.topSelling = action.payload;
+        state.error = null;
+      })
+      .addCase(getTopSelling.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });
