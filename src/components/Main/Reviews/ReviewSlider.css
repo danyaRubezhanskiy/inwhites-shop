@@ -1,0 +1,61 @@
+.slider-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0;
+  position: relative;
+}
+
+.custom-swiper {
+  padding: 0 60px;
+}
+
+.review-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Добавим размытие для краевых слайдов */
+.swiper-slide {
+  transition: all 0.3s ease;
+  opacity: 0.6;
+  filter: blur(3px);
+  transform: scale(0.9);
+}
+
+/* Активные 3 слайда — нормальные */
+.swiper-slide-prev,
+.swiper-slide-active,
+.swiper-slide-next {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: black;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10; /* Важно! */
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
