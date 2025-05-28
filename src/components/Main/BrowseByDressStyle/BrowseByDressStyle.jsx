@@ -5,9 +5,9 @@ import clsx from "clsx";
 
 const BrowseByDressStyle = () => {
   return (
-    <section className={container.container}>
-      <div className={css.container}>
-        <h2 className={css.title}>BROWSE BY dress STYLE</h2>
+    <section className={clsx(container.container, css.section)}>
+      <div className={css.div}>
+        <h2 className={css.title}>BROWSE BY DRESS STYLE</h2>
         <div className={css.imgWrapper}>
           <img
             className={css.imgCasual}

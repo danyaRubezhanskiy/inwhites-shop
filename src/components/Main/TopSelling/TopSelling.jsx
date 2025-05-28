@@ -5,6 +5,7 @@ import css from "./TopSelling.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getTopSelling } from "../../../store/cartSlice";
 import { Rate } from "antd";
+import clsx from "clsx";
 
 function TopSelling() {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ function TopSelling() {
   };
 
   return (
-    <section className={container.container}>
+    <section className={clsx(container.container, css.section)}>
       <h2 className={css.title}>Top Selling</h2>
       <ul className={css.list}>
         {visibleProducts.map((product) => (

@@ -6,7 +6,10 @@
   color: #000;
   letter-spacing: 2px;
   margin-bottom: 55px;
-  
+}
+
+.section {
+  margin-bottom: 128px;
 }
 
 .list {
@@ -61,7 +64,7 @@
   font-size: 16px;
   color: #000;
   margin-top: 51px;
-  margin-bottom: 79px;
+
   display: flex;
   align-items: center;
   justify-content: center;

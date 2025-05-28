@@ -5,6 +5,7 @@ import css from "./NewArrivals.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../../store/cartSlice";
 import { Rate } from "antd";
+import clsx from "clsx";
 
 function NewArrivals() {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ function NewArrivals() {
   };
 
   return (
-    <section className={container.container}>
+    <section className={clsx(container.container, css.section)}>
       <h2 className={css.title}>New Arrivals</h2>
       <ul className={css.list}>
         {visibleProducts.map((product) => (

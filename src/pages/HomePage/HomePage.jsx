@@ -5,6 +5,7 @@ import BlackSection from "../../components/Main/BlackSection/BlackSection.jsx";
 import NewArrivals from "../../components/Main/NewArrivals/NewArrivals.jsx";
 import TopSelling from "../../components/Main/TopSelling/TopSelling.jsx";
 import BrowseByDressStyle from "../../components/Main/BrowseByDressStyle/BrowseByDressStyle.jsx";
+import Reviews from "../../components/Main/Reviews/Reviews.jsx";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <NewArrivals></NewArrivals>
       <TopSelling></TopSelling>
       <BrowseByDressStyle></BrowseByDressStyle>
+      <Reviews></Reviews>
     </div>
   );
 };
