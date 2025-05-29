@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import css from "./Reviews.module.css";
 import clsx from "clsx";
@@ -39,30 +39,46 @@ const reviews = [
 ];
 
 const Reviews = () => {
+  const swiperRef = useRef(null);
+
   return (
-    <section className={clsx(container.container, css.section)}>
-      <h2 className={css.title}>OUR HAPPY CUSTOMERS</h2>
-      <div className="slider-container">
-        <Swiper
-          modules={[Navigation]}
-          navigation={true}
-          spaceBetween={20}
-          slidesPerView={3}
-          centeredSlides={true}
-          grabCursor={true}
-          loop
-          className="custom-swiper"
-        >
-          {reviews.map((review) => (
-            <SwiperSlide key={review.id}>
-              <div className="review-card">
-                <h3>{review.name}</h3>
-                <p>{review.text}</p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <section className={css.section}>
+      <div className={clsx(container.container, css.wrapper)}>
+        <h2 className={css.title}>OUR HAPPY CUSTOMERS</h2>
+        <div className={css.navigationWrapper}>
+          <button
+            className={css.arrow}
+            onClick={() => swiperRef.current?.slidePrev()}
+          >
+            ◀
+          </button>
+          <button
+            className={css.arrow}
+            onClick={() => swiperRef.current?.slideNext()}
+          >
+            ▶
+          </button>
+        </div>
       </div>
+
+      <Swiper
+        modules={[Navigation]}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        slidesPerView={3}
+        centeredSlides={true}
+        loop={true}
+        spaceBetween={20}
+        className="custom-swiper swiperWrapper"
+      >
+        {reviews.map((review) => (
+          <SwiperSlide key={review.id}>
+            <div className="review-card">
+              <h3>{review.name}</h3>
+              <p>{review.text}</p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 };

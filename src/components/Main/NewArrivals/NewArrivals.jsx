@@ -14,10 +14,10 @@ function NewArrivals() {
   const products = useSelector((state) => state.products.items);
 
   const visibleProducts = showAll ? products : products.slice(0, 4);
-
-  useEffect(() => {
+useEffect(() => {
     dispatch(getAllProducts());
-  }, [dispatch]);
+  }, [dispatch]
+  );
 
   const tooggleShow = () => {
     setShowAll((prev) => !prev);

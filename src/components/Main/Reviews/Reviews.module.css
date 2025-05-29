@@ -1,5 +1,6 @@
 .section {
-  margin-bottom: 80px;
+  padding: 60px 0;
+  background-color: #f8f8f8;
 }
 
 .title {
@@ -7,4 +8,44 @@
   font-weight: 700;
   font-size: 48px;
   color: #000;
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.navigationWrapper {
+  display: flex;
+  gap: 8px;
+  position: relative;
+  z-index: 10;
+}
+
+.arrow {
+  width: 36px;
+  height: 36px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Swiper выходит за пределы контейнера */
+.swiperWrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 0 60px;
 }
