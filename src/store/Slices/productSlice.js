@@ -38,7 +38,9 @@ export const getTopSelling = createAsyncThunk(
   }
 );
 
-const cartSlice = createSlice({
+;
+
+const productsSlice = createSlice({
   name: "products",
   initialState,
   reducer: {},
@@ -73,6 +75,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, clearCart } = productsSlice.actions;
 
-export default cartSlice.reducer;
+export default productsSlice.reducer;

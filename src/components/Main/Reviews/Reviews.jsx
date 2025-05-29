@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import css from "./Reviews.module.css";
 import clsx from "clsx";
@@ -9,37 +9,20 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import "./ReviewSlider.css";
-
-const reviews = [
-  {
-    id: 1,
-    name: "Alice",
-    text: "Очень крутой магазин! Покупаю здесь постоянно.",
-  },
-  {
-    id: 2,
-    name: "Bob",
-    text: "Быстрая доставка и качественный товар.",
-  },
-  {
-    id: 3,
-    name: "Charlie",
-    text: "Служба поддержки супер отзывчивая!",
-  },
-  {
-    id: 4,
-    name: "Diana",
-    text: "Немного дороговато, но качество оправдывает цену.",
-  },
-  {
-    id: 5,
-    name: "Ethan",
-    text: "Рекомендую друзьям — уже 2 года с вами!",
-  },
-];
+import { useDispatch, useSelector } from "react-redux";
+import { getReviews } from "../../../store/Slices/reviewSlice";
+import { Rate } from "antd";
 
 const Reviews = () => {
   const swiperRef = useRef(null);
+
+  const items = useSelector((state) => state.reviews.items);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getReviews());
+  }, [dispatch]);
 
   return (
     <section className={css.section}>
@@ -64,17 +47,22 @@ const Reviews = () => {
       <Swiper
         modules={[Navigation]}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
-        slidesPerView={3}
+        slidesPerView={4}
         centeredSlides={true}
         loop={true}
         spaceBetween={20}
-        className="custom-swiper swiperWrapper"
+        className="custom-swiper"
       >
-        {reviews.map((review) => (
+        {items.map((review) => (
           <SwiperSlide key={review.id}>
             <div className="review-card">
-              <h3>{review.name}</h3>
-              <p>{review.text}</p>
+              <Rate
+                defaultValue={review.rating}
+                disabled={true}
+                allowHalf={true}
+              />             
+              <h3 className={css.name}>{review.name}</h3>
+              <p className={css.text}>{review.comment}</p>
             </div>
           </SwiperSlide>
         ))}

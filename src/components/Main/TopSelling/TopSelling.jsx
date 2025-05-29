@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import container from "../../../container.module.css";
 import css from "./TopSelling.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getTopSelling } from "../../../store/cartSlice";
+import { getTopSelling } from "../../../store/Slices/productSlice";
 import { Rate } from "antd";
 import clsx from "clsx";
 

@@ -1,6 +1,6 @@
 .section {
-  padding: 60px 0;
   background-color: #f8f8f8;
+  margin-bottom: 80px;
 }
 
 .title {
@@ -9,6 +9,23 @@
   font-size: 48px;
   color: #000;
   margin-bottom: 20px;
+}
+
+.name {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 110%;
+  color: #000;
+  margin: 15px 0px 16.5px 0px;
+}
+
+.text {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 137%;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .wrapper {
@@ -23,29 +40,4 @@
   gap: 8px;
   position: relative;
   z-index: 10;
-}
-
-.arrow {
-  width: 36px;
-  height: 36px;
-  background-color: black;
-  color: white;
-  border-radius: 50%;
-  font-size: 18px;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Swiper выходит за пределы контейнера */
-.swiperWrapper {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  padding: 0 60px;
 }
