@@ -6,6 +6,7 @@ import NewArrivals from "../../components/Main/NewArrivals/NewArrivals.jsx";
 import TopSelling from "../../components/Main/TopSelling/TopSelling.jsx";
 import BrowseByDressStyle from "../../components/Main/BrowseByDressStyle/BrowseByDressStyle.jsx";
 import Reviews from "../../components/Main/Reviews/Reviews.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
       <TopSelling></TopSelling>
       <BrowseByDressStyle></BrowseByDressStyle>
       <Reviews></Reviews>
+      <Footer></Footer>
     </div>
   );
 };

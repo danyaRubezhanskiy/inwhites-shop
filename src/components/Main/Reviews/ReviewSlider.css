@@ -21,10 +21,9 @@
 }
 
 .review-card {
-  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   padding: 28px 32px;
   width: 400px;
   height: 240px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
 }

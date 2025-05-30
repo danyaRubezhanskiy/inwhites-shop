@@ -30,16 +30,20 @@ const Reviews = () => {
         <h2 className={css.title}>OUR HAPPY CUSTOMERS</h2>
         <div className={css.navigationWrapper}>
           <button
-            className={css.arrow}
+            className={css.btn}
             onClick={() => swiperRef.current?.slidePrev()}
           >
-            ◀
+            <svg width="20" height="16">
+              <use href="../../../../public/icons/Review.svg#arrowLeft" />
+            </svg>
           </button>
           <button
-            className={css.arrow}
+            className={css.btn}
             onClick={() => swiperRef.current?.slideNext()}
           >
-            ▶
+            <svg width="20" height="16">
+              <use href="../../../../public/icons/Review.svg#arrowRight" />
+            </svg>
           </button>
         </div>
       </div>
@@ -60,8 +64,13 @@ const Reviews = () => {
                 defaultValue={review.rating}
                 disabled={true}
                 allowHalf={true}
-              />             
-              <h3 className={css.name}>{review.name}</h3>
+              />
+              <h3 className={css.name}>
+                {review.name}{" "}
+                <svg width="20" height="20">
+                  <use href="../../../../public/icons/Review.svg#galochka" />
+                </svg>
+              </h3>
               <p className={css.text}>{review.comment}</p>
             </div>
           </SwiperSlide>
