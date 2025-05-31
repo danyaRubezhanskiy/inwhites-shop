@@ -1,0 +1,43 @@
+.ContactUsDiv{
+    display: flex;
+    height: 177px;
+}
+
+.shopDiv {
+  width: 248px;
+  margin-right: 114px;
+}
+
+.title {
+  font-family: "Anton", sans-serif;
+  font-weight: 700;
+  font-size: 33px;
+  color: #000;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+}
+
+.text {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 157%;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 35px;
+}
+
+.iconList {
+  list-style-type: none;
+  display: flex;
+  gap: 12px;
+}
+
+.helpList {
+  list-style-type: none;
+  display: flex;
+  gap: 114px;
+}
+
+.itemsList{
+    list-style-type: none;
+}

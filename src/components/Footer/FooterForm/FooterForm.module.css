@@ -41,6 +41,13 @@
   color: rgba(0, 0, 0, 0.4);
 }
 
+.inputError {
+  border: 2px solid #a84042;
+  box-shadow: 0 0 4px rgba(255, 77, 79, 0.4);
+  background-color: #fff5f5;
+  color: #a84042;
+  fill: #a84042;
+}
 .error {
   font-family: "Satoshi", sans-serif;
   font-weight: 500;
@@ -75,4 +82,8 @@
   position: absolute;
   left: 15px;
   top: 25%;
+}
+
+.iconError {
+  fill: #a84042;
 }

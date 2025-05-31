@@ -56,6 +56,7 @@ const Reviews = () => {
         loop={true}
         spaceBetween={20}
         className="custom-swiper"
+        allowTouchMove = {false}
       >
         {items.map((review) => (
           <SwiperSlide key={review.id}>

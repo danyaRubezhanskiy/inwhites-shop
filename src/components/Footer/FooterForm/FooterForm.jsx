@@ -1,7 +1,8 @@
 import React from "react";
 import css from "./FooterForm.module.css";
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
+import clsx from "clsx";
 
 const FooterForm = () => {
   return (
@@ -10,35 +11,47 @@ const FooterForm = () => {
 
       <Formik
         validateOnBlur={false}
+        validateOnChange={false}
         initialValues={{ email: "" }}
         validationSchema={Yup.object({
-          email: Yup.string().email().required(),
+          email: Yup.string().email().required("Email is required"),
         })}
-        onSubmit={(value) => {
+        onSubmit={(value, { resetForm }) => {
           console.log(value);
+          resetForm();
         }}
       >
-        <Form className={css.formWrapper}>
-          <div className={css.inputWrapper}>
-            <Field
-              placeholder="Enter your email"
-              className={css.input}
-              name="email"
-              type="email"
-            />
-            <svg className={css.icon} width="24" height="24">
-              <use href="../../../../public/icons/form.svg#mailIcon" />
-            </svg>
-          </div>
-          <ErrorMessage
-            className={css.error}
-            name="email"
-            component="div"
-          ></ErrorMessage>
-          <button className={css.btn} type="submit">
-            Subscribe to Newsletter
-          </button>
-        </Form>
+        {({ errors, touched }) => (
+          <Form noValidate className={css.formWrapper}>
+            <div className={css.inputWrapper}>
+              <Field
+                placeholder="Enter your email"
+                className={clsx(css.input, {
+                  [css.inputError]: errors.email && touched.email,
+                })}
+                name="email"
+                type="email"
+              />
+              <svg
+                className={clsx(css.icon, {
+                  [css.iconError]: errors.email && touched.email,
+                })}
+                width="24"
+                height="24"
+              >
+                <use href="/icons/form.svg#mailIcon" />
+              </svg>
+            </div>
+            <button
+              className={clsx(css.btn, {
+                [css.noMargin]: errors.email && touched.email,
+              })}
+              type="submit"
+            >
+              Subscribe to Newsletter
+            </button>
+          </Form>
+        )}
       </Formik>
     </div>
   );
