@@ -1,6 +1,8 @@
-.ContactUsDiv{
-    display: flex;
-    height: 177px;
+.ContactUsDiv {
+  display: flex;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
 }
 
 .shopDiv {
@@ -38,6 +40,42 @@
   gap: 114px;
 }
 
-.itemsList{
-    list-style-type: none;
+.itemsList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.ContactUsList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainTextItem {
+  width: 248px;
+}
+
+.liTitle {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 112%;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.link {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 119%;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+
+.link:visited {
+  color: #000;
 }
