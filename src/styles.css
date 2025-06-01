@@ -11,8 +11,11 @@ ol[class] {
   padding: 0;
 }
 
-a:visited {
-  color: white;
+a {
+  text-decoration: none;  
+}
+
+a :visited {
   text-decoration: none;
 }
 
@@ -36,8 +39,6 @@ a:visited {
   font-weight: 400;
   font-style: italic;
 }
-
-
 
 /* Убираем внешние отступы */
 body,
@@ -69,11 +70,6 @@ body {
 ul[class],
 ol[class] {
   list-style: none;
-}
-
-/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
 }
 
 /* Упрощаем работу с изображениями */
