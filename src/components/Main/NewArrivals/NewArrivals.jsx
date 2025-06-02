@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../../store/Slices/productSlice";
 import { Rate } from "antd";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
 function NewArrivals() {
   const dispatch = useDispatch();
@@ -14,10 +15,9 @@ function NewArrivals() {
   const products = useSelector((state) => state.products.items);
 
   const visibleProducts = showAll ? products : products.slice(0, 4);
-useEffect(() => {
+  useEffect(() => {
     dispatch(getAllProducts());
-  }, [dispatch]
-  );
+  }, [dispatch]);
 
   const tooggleShow = () => {
     setShowAll((prev) => !prev);
@@ -29,24 +29,26 @@ useEffect(() => {
       <ul className={css.list}>
         {visibleProducts.map((product) => (
           <li key={product.id} className={css.listItem}>
-            <div className={css.card}>
-              <img
-                className={css.img}
-                src={product.image}
-                alt={product.title}
+            <Link to={`/item/${product.id}`}>
+              <div className={css.card}>
+                <img
+                  className={css.img}
+                  src={product.image}
+                  alt={product.title}
+                />
+              </div>
+              <p className={css.itemName}>
+                {product.title.length > 20
+                  ? product.title.slice(0, 20) + "..."
+                  : product.title}
+              </p>
+              <Rate
+                defaultValue={product.rating.rate}
+                disabled={true}
+                allowHalf={true}
               />
-            </div>
-            <p className={css.itemName}>
-              {product.title.length > 20
-                ? product.title.slice(0, 20) + "..."
-                : product.title}
-            </p>
-            <Rate
-              defaultValue={product.rating.rate}
-              disabled={true}
-              allowHalf={true}
-            />
-            <p className={css.itemPrice}>${Math.round(product.price)}</p>
+              <p className={css.itemPrice}>${Math.round(product.price)}</p>
+            </Link>
           </li>
         ))}
       </ul>

@@ -4,6 +4,7 @@ import Axios from "axios";
 const initialState = {
   items: [],
   topSelling: [],
+  singleProduct: [],
   loading: false,
   error: null,
 };
@@ -31,14 +32,25 @@ export const getTopSelling = createAsyncThunk(
     try {
       const { data } = await axios.get("/products");
       const sortedData = data.sort((a, b) => b.rating.rate - a.rating.rate);
-      return sortedData.slice(0,8);
+      return sortedData.slice(0, 8);
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }
   }
 );
 
-;
+export const getSingleProduct = createAsyncThunk(
+  "products/getSingleProduct",
+  async (id, thunkApi) => {
+    try {
+      const { data } = await axios.get(`/products/${id}`);
+      console.log(data);
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
 
 const productsSlice = createSlice({
   name: "products",
@@ -69,6 +81,19 @@ const productsSlice = createSlice({
         state.error = null;
       })
       .addCase(getTopSelling.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(getSingleProduct.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getSingleProduct.fulfilled, (state, action) => {
+        state.loading = false;
+        state.singleProduct = action.payload;
+        state.error = null;
+      })
+      .addCase(getSingleProduct.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

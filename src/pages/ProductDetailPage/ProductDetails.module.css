@@ -1,0 +1,9 @@
+.productContainer {
+  display: flex;
+}
+
+.imgWrapper {
+  width: 610px;
+  height: 530px;
+  object-fit: cover;
+}
