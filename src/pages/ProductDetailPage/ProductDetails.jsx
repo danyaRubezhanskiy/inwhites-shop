@@ -8,6 +8,7 @@ import { Rate } from "antd";
 import css from "./ProductDetails.module.css";
 import clsx from "clsx";
 import container from "../../container.module.css";
+import BreadcrumbComp from "../../components/Breadcrumb/BreadcrumbComp";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -23,23 +24,26 @@ const ProductDetails = () => {
   return (
     <div>
       <Header></Header>
-      <div className={clsx(css.productContainer, container.container)}>
-        <div>
+
+      <div className={clsx(container.container)}>
+        <BreadcrumbComp
+          className={css.bread}
+          category={product.category}
+        ></BreadcrumbComp>
+        <div className={css.productContainer}>
           <img
             className={css.imgWrapper}
             src={product.image}
             alt={product.title}
           />
-        </div>
-        <div>
-          <h2>{product.title}</h2>
-          <Rate defaultValue={5} disabled={true} allowHalf={true} />
-          <p>{product.price}</p>
-          <p>{product.description}</p>
+          <div className={css.rightPart}>
+            <h2 className={css.title}>{product.title}</h2>
+            <Rate defaultValue={5} disabled={true} allowHalf={true} />
+            <p>{product.price}</p>
+            <p>{product.description}</p>
+          </div>
         </div>
       </div>
-      <p>{product.title}</p>
-      <p>{id}</p>
     </div>
   );
 };
