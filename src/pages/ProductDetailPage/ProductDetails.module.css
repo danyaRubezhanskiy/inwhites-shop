@@ -2,12 +2,12 @@
   margin-top: 36px;
   display: flex;
 }
-
+/* 
 .imgWrapper {
   width: 610px;
   height: 530px;
   object-fit: cover;
-}
+} */
 
 .rightPart {
   margin-left: 40px;
@@ -19,4 +19,75 @@
   font-size: 40px;
   color: #000;
   letter-spacing: 1.5px;
+  margin-bottom: 14px;
+}
+
+.description {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 137%;
+  color: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.price {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.rate {
+  display: flex;
+  margin-bottom: 14px;
+}
+
+.rateText {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+  display: flex;
+}
+
+.rateTextOpacity {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.chooseText {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 16px;
+}
+
+.block{
+  display: flex;
+  flex-direction: column;
+}
+
+.colorList {
+  display: flex;
+  height: 37px;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.colorBtn {
+  width: 37px;
+  height: 37px;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+  background-color: #000;
 }

@@ -35,12 +35,40 @@ const ProductDetails = () => {
             className={css.imgWrapper}
             src={product.image}
             alt={product.title}
+            width="600px"
           />
           <div className={css.rightPart}>
             <h2 className={css.title}>{product.title}</h2>
-            <Rate defaultValue={5} disabled={true} allowHalf={true} />
-            <p>{product.price}</p>
-            <p>{product.description}</p>
+            {product.rating && (
+              <div className={css.rate}>
+                <Rate
+                  defaultValue={product.rating.rate}
+                  disabled={true}
+                  allowHalf={true}
+                />
+                <span className={css.rateText}>
+                  {product.rating.rate}
+                  <p className={css.rateTextOpacity}>/5</p>
+                </span>
+              </div>
+            )}
+            <p className={css.price}>${product.price}</p>
+            <p className={css.description}>{product.description}</p>
+            <p className={css.chooseText}>Select Colors</p>
+            <div className={css.block}>
+              <ul className={css.colorList}>
+                <li>
+                  <button className={css.colorBtn}></button>
+                </li>
+                <li>
+                  <button className={css.colorBtn}></button>
+                </li>
+                <li>
+                  <button className={css.colorBtn}></button>
+                </li>
+              </ul>
+            </div>
+            <p className={css.chooseText}>Choose Size</p>
           </div>
         </div>
       </div>
