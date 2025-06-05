@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,9 +17,24 @@ const ProductDetails = () => {
 
   const product = useSelector((state) => state.products.singleProduct);
 
+  const [selectedSize, setSelectedSize] = useState();
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [colorOptions, setColorOptions] = useState([]);
+
   useEffect(() => {
     dispatch(getSingleProduct(id));
   }, [dispatch, id]);
+
+  useEffect(() => {
+    const generateRandomColor = () =>
+      "#" +
+      Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, "0");
+
+    const colors = Array.from({ length: 3 }, () => generateRandomColor());
+    setColorOptions(colors);
+  }, []);
 
   return (
     <div>
@@ -55,20 +70,55 @@ const ProductDetails = () => {
             <p className={css.price}>${product.price}</p>
             <p className={css.description}>{product.description}</p>
             <p className={css.chooseText}>Select Colors</p>
-            <div className={css.block}>
-              <ul className={css.colorList}>
-                <li>
-                  <button className={css.colorBtn}></button>
-                </li>
-                <li>
-                  <button className={css.colorBtn}></button>
-                </li>
-                <li>
-                  <button className={css.colorBtn}></button>
-                </li>
-              </ul>
+            <div className={css.list}>
+              {colorOptions.map((color, index) => (
+                <button
+                  key={index}
+                  className={clsx(css.colorBtn)}
+                  style={{ backgroundColor: color }}
+                  onClick={() => setSelectedColor(color)}
+                >
+                  <svg
+                    className={selectedColor == color ? "" : css.icon}
+                    width="16px"
+                    height=""
+                  >
+                    <use href="../../../public/icons/whiteGalocka.svg#icon" />
+                  </svg>
+                </button>
+              ))}
             </div>
             <p className={css.chooseText}>Choose Size</p>
+            <div className={css.list}>
+              {["Small", "Medium", "Large", "X-Large"].map((size) => (
+                <button
+                  key={size}
+                  className={clsx(
+                    css.sizeBtn,
+                    selectedSize === size ? css.activeSize : ""
+                  )}
+                  onClick={() => setSelectedSize(size)}
+                >
+                  {size}
+                </button>
+              ))}
+            </div>
+            <div className={css.cartContainer}>
+              <div className={css.countContainer}>
+                <button className={css.countBtn}>
+                  <svg width="16px" height="16px">
+                    <use href="../../../public/icons/count.svg#icon-minus" />
+                  </svg>
+                </button>
+                <p>1</p>
+                <button className={css.countBtn}>
+                  <svg width="16px" height="16px">
+                    <use href="../../../public/icons/count.svg#icon-plus" />
+                  </svg>
+                </button>
+              </div>
+              <button className={css.addToCartBtn}>Add to Cart</button>
+            </div>
           </div>
         </div>
       </div>
