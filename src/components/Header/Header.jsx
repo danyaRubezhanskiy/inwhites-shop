@@ -32,7 +32,9 @@ const Header = () => {
     <header>
       <BlackHeader arrow={true} />
       <div className={clsx(css.navContainer, container.container)}>
-        <Link to='/' className={css.title}>INWH.SHOP</Link>
+        <Link to="/" className={css.title}>
+          INWH.SHOP
+        </Link>
         <nav className={css.nav}>
           <ul className={css.navList}>
             <li>
@@ -74,12 +76,16 @@ const Header = () => {
         </form>
 
         <div className={css.iconsContainer}>
-          <svg className={css.icon} width="24" height="24" aria-hidden="true">
-            <use href="../../../public/icons/symbol-defs.svg#icon-Frame-1" />
-          </svg>
-          <svg className={css.icon} width="24" height="24" aria-hidden="true">
-            <use href="../../../public/icons/symbol-defs.svg#icon-Frame" />
-          </svg>
+          <Link to="/">
+            <svg className={css.icon} width="24" height="24" aria-hidden="true">
+              <use href="../../../public/icons/symbol-defs.svg#icon-Frame-1" />
+            </svg>
+          </Link>
+          <Link to="/cart">
+            <svg className={css.icon} width="24" height="24" aria-hidden="true">
+              <use href="../../../public/icons/symbol-defs.svg#icon-Frame" />
+            </svg>
+          </Link>
         </div>
       </div>
     </header>

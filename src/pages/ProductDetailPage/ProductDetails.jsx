@@ -9,6 +9,7 @@ import css from "./ProductDetails.module.css";
 import clsx from "clsx";
 import container from "../../container.module.css";
 import BreadcrumbComp from "../../components/Breadcrumb/BreadcrumbComp";
+import { addToCart } from "../../store/Slices/cartSlice";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -20,6 +21,7 @@ const ProductDetails = () => {
   const [selectedSize, setSelectedSize] = useState();
   const [selectedColor, setSelectedColor] = useState(null);
   const [colorOptions, setColorOptions] = useState([]);
+  const [selectedQuantity, setselectedQuantity] = useState(1);
 
   useEffect(() => {
     dispatch(getSingleProduct(id));
@@ -35,6 +37,25 @@ const ProductDetails = () => {
     const colors = Array.from({ length: 3 }, () => generateRandomColor());
     setColorOptions(colors);
   }, []);
+
+  function minusQuanity() {
+    setselectedQuantity((prev) => Math.max(1, prev - 1));
+  }
+
+  const handleAddToCart = () => {
+    console.log({
+      quantity: selectedQuantity,
+      color: selectedColor,
+      size: selectedSize,
+    });
+    dispatch(
+      addToCart({
+        quantity: selectedQuantity,
+        color: selectedColor,
+        size: selectedSize,
+      })
+    );
+  };
 
   return (
     <div>
@@ -81,7 +102,7 @@ const ProductDetails = () => {
                   <svg
                     className={selectedColor == color ? "" : css.icon}
                     width="16px"
-                    height=""
+                    height="16px"
                   >
                     <use href="../../../public/icons/whiteGalocka.svg#icon" />
                   </svg>
@@ -105,19 +126,27 @@ const ProductDetails = () => {
             </div>
             <div className={css.cartContainer}>
               <div className={css.countContainer}>
-                <button className={css.countBtn}>
+                <button className={css.countBtn} onClick={() => minusQuanity()}>
                   <svg width="16px" height="16px">
                     <use href="../../../public/icons/count.svg#icon-minus" />
                   </svg>
                 </button>
-                <p>1</p>
-                <button className={css.countBtn}>
+                <p>{selectedQuantity}</p>
+                <button
+                  onClick={() => setselectedQuantity(selectedQuantity + 1)}
+                  className={css.countBtn}
+                >
                   <svg width="16px" height="16px">
                     <use href="../../../public/icons/count.svg#icon-plus" />
                   </svg>
                 </button>
               </div>
-              <button className={css.addToCartBtn}>Add to Cart</button>
+              <button
+                onClick={() => handleAddToCart()}
+                className={css.addToCartBtn}
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>
