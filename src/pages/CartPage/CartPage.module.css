@@ -1,0 +1,120 @@
+.title {
+  font-family: "Anton", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #000;
+  letter-spacing: 2px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.cartDiv {
+  width: 715px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 20px 24px;
+}
+
+.cartList {
+}
+
+.cartItem {
+  position: relative;
+  width: 667px;
+  display: flex;
+}
+
+.cartItem:not(:last-child) {
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cartItem:not(:first-child) {
+  margin-top: 24px;
+}
+
+.img {
+  width: 124px;
+  height: 124px;
+  object-fit: contain;
+  margin-right: 16px;
+}
+
+.itemName {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 2px;
+}
+
+.itemSize {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.itemSizeOp {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.itemColor {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.colorDiv {
+  display: flex;
+}
+
+.color {
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: red;
+}
+
+.itemPrice {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #000;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.coutnDiv {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.countContainer {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+  display: flex;
+  border-radius: 62px;
+  padding: 16px 20px;
+  width: 170px;
+  height: 52px;
+  background: #f0f0f0;
+  justify-content: space-between;
+}
+
+.countBtn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

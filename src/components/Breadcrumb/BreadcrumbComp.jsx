@@ -25,7 +25,6 @@ const BreadcrumbComp = ({ category }) => {
         },
         {
           title: `${capitalizeFirstLetter(category)}`,
-          href: "/",
         },
       ]}
     />

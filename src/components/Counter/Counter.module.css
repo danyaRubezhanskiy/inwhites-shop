@@ -1,0 +1,15 @@
+.countContainer {
+  display: flex;
+  border-radius: 62px;
+  padding: 16px 20px;
+  width: 170px;
+  height: 52px;
+  background: #f0f0f0;
+  justify-content: space-between;
+}
+
+.countBtn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

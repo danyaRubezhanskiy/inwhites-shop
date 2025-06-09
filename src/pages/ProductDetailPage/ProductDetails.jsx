@@ -50,6 +50,9 @@ const ProductDetails = () => {
     });
     dispatch(
       addToCart({
+        price: product.price,
+        title: product.title,
+        image: product.image,
         quantity: selectedQuantity,
         color: selectedColor,
         size: selectedSize,
