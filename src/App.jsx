@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { lazy } from "react";
-
+import { ToastContainer } from "react-toastify";
+import "./toastStyles.css";
 const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
 const ProductDetails = lazy(() =>
   import("./pages/ProductDetailPage/ProductDetails.jsx")
@@ -15,6 +16,15 @@ function App() {
         <Route path="/item/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<CartPage></CartPage>} />
       </Routes>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        pauseOnFocusLoss
+      />
     </>
   );
 }

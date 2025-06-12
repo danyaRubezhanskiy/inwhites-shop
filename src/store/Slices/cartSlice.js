@@ -15,16 +15,20 @@ const cartSlice = createSlice({
           item.color === action.payload.color &&
           item.size === action.payload.size
       );
-
       if (existing) {
         existing.quantity += action.payload.quantity;
       } else {
         state.items.push(action.payload);
       }
     },
+    removeFromCart: (state, action) => {
+      state.items = state.items.filter(
+        (item, index) => index !== action.payload
+      );
+    },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

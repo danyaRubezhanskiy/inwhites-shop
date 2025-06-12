@@ -8,6 +8,10 @@
   margin-bottom: 24px;
 }
 
+.yourCartDiv{
+  display: flex;
+}
+
 .cartDiv {
   width: 715px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -92,6 +96,13 @@
   position: absolute;
   top: 0px;
   right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 3px;
 }
 
 .coutnDiv {
@@ -101,9 +112,9 @@
 }
 
 .countContainer {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
   display: flex;
   border-radius: 62px;
   padding: 16px 20px;
@@ -118,3 +129,29 @@
   background-color: transparent;
   cursor: pointer;
 }
+
+.orderSumm {
+  width: 505px;
+  height: 458px;
+  padding: 20px;
+}
+
+.orderSummTitle {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 24px;
+}
+
+.orderSummList{
+  list-style-type: none;
+  gap: 20px;
+}
+
+.orderSummItem{
+  display: flex;
+  justify-content: space-between;
+}
+
+

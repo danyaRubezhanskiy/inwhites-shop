@@ -10,6 +10,7 @@ import clsx from "clsx";
 import container from "../../container.module.css";
 import BreadcrumbComp from "../../components/Breadcrumb/BreadcrumbComp";
 import { addToCart } from "../../store/Slices/cartSlice";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -43,21 +44,28 @@ const ProductDetails = () => {
   }
 
   const handleAddToCart = () => {
-    console.log({
-      quantity: selectedQuantity,
-      color: selectedColor,
-      size: selectedSize,
-    });
-    dispatch(
-      addToCart({
-        price: product.price,
-        title: product.title,
-        image: product.image,
+    if (!selectedSize) {
+      toast.error("Please select a size");
+    } else if (!selectedColor) {
+      toast.error("Please select a color");
+    } else {
+      toast.success("Added to cart!");
+      console.log({
         quantity: selectedQuantity,
         color: selectedColor,
         size: selectedSize,
-      })
-    );
+      });
+      dispatch(
+        addToCart({
+          price: product.price,
+          title: product.title,
+          image: product.image,
+          quantity: selectedQuantity,
+          color: selectedColor,
+          size: selectedSize,
+        })
+      );
+    }
   };
 
   return (

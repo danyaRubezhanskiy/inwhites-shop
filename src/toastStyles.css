@@ -1,0 +1,41 @@
+.toast-success {
+  background-color: #ffffff;
+  color: #1d1d1f;
+  border-left: 4px solid #4caf50;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  animation: fadeInSlide 0.4s ease;
+}
+
+.toast-error {
+  background-color: #ffffff;
+  color: #d32f2f;
+  border-left: 4px solid #f44336;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  animation: fadeInSlide 0.4s ease;
+}
+
+.toast-body {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.toast-progress {
+  background: rgba(0, 0, 0, 0.1);
+  height: 3px;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Анимация */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
