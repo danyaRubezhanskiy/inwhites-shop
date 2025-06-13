@@ -8,7 +8,7 @@
   margin-bottom: 24px;
 }
 
-.yourCartDiv{
+.yourCartDiv {
   display: flex;
 }
 
@@ -144,14 +144,73 @@
   margin-bottom: 24px;
 }
 
-.orderSummList{
+.orderSummList {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.orderSummItem{
+.spanCon {
   display: flex;
   justify-content: space-between;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.6);
 }
 
+.spanText {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
+}
 
+.total {
+  margin-top: 40px;
+  margin-bottom: 24px;
+  color: #000;
+}
+
+.input {
+  border-radius: 62px;
+  padding: 12px 16px 12px 52px;
+  width: 326px;
+  height: 48px;
+  background: #f0f0f0;
+  border: none;
+  margin-right: 12px;
+  outline: none;
+}
+
+.promoBtn {
+  border: none;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 62px;
+  padding: 12px 16px;
+  width: 119px;
+  height: 48px;
+  background: #000;
+  cursor: pointer;
+}
+
+.formWrapper{
+  display: flex;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  fill: rgba(0, 0, 0, 0.4);
+}

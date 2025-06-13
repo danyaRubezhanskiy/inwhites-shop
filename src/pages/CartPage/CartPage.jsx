@@ -6,6 +6,8 @@ import container from "../../container.module.css";
 import css from "./CartPage.module.css";
 import Counter from "../../components/Counter/Counter.jsx";
 import { removeFromCart } from "../../store/Slices/cartSlice.js";
+import clsx from "clsx";
+import { Field, Form, Formik } from "formik";
 
 const CartPage = () => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -60,18 +62,35 @@ const CartPage = () => {
             <h3 className={css.orderSummTitle}>Order Summary</h3>
             <ul className={css.orderSummList}>
               <li className={css.orderSummItem}>
-                <p>Subtotal</p>
-                <p>$551</p>
+                <span className={css.spanCon}>
+                  Subtotal <p className={css.spanText}>$551</p>
+                </span>
               </li>
               <li className={css.orderSummItem}>
-                <p>Delivery Fee</p>
-                <p>$15</p>
-              </li>
-              <li className={css.orderSummItem}>
-                <p>Total</p>
-                <p>$43242</p>
+                <span className={css.spanCon}>
+                  Delivery Fee <p className={css.spanText}>$15</p>
+                </span>
               </li>
             </ul>
+            <span className={clsx(css.spanCon, css.total)}>
+              Total <p className={css.spanText}>$43242</p>
+            </span>
+            <Formik>
+              <Form  className={css.formWrapper}>
+                <div className={css.inputWrapper}>
+                  <Field
+                    className={css.input}
+                    placeholder="Add promo code"
+                  ></Field>
+                  <svg className={css.icon} width="22" height="22">
+                    <use href="../../../public/icons/promoCode.svg#promo" />
+                  </svg>
+                </div>
+                <button className={css.promoBtn} type="submit">
+                  Apply
+                </button>
+              </Form>
+            </Formik>
           </div>
         </div>
       </div>
