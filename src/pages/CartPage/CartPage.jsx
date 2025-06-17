@@ -18,10 +18,9 @@ const CartPage = () => {
   const [deliveryPrice, setDeliveryPrice] = useState(0);
 
   const cartItems = useSelector((state) => state.cart.items);
-  const validPromoCodes = ["SALE10", "DISCOUNT20", "FREESHIP"];
+  const validPromoCodes = ["CODE10", "DISCOUNT20", "FREESHIP"];
 
   useEffect(() => {
-    console.log(cartItems);
     if (cartItems.length != 0) {
       setDeliveryPrice(15);
     }
@@ -86,7 +85,7 @@ const CartPage = () => {
                         </svg>
                       </button>
                       <div className={css.coutnDiv}>
-                        <Counter quantity={item.quantity} />
+                        <Counter index={index} quantity={item.quantity} />
                       </div>
                     </li>
                   ))}
@@ -132,6 +131,17 @@ const CartPage = () => {
                     Apply
                   </button>
                 </div>
+                <button className={css.checkOutBtn}>
+                  Go to Checkout
+                  <svg
+                    className={css.arrowIcon}
+                    width="16"
+                    height="19"
+                    fill="white"
+                  >
+                    <use href="../../../public/icons/Review.svg#arrowRight" />
+                  </svg>
+                </button>
               </div>
             </div>
           </>

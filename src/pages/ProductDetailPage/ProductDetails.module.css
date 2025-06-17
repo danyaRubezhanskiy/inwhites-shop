@@ -79,6 +79,9 @@
 }
 
 .colorBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 37px;
   height: 37px;
   border-radius: 100%;
@@ -157,4 +160,34 @@
   cursor: pointer;
 }
 
+.tabNav {
+  margin-top: 80px;
+  display: flex;
+}
 
+.tabBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 110%;
+  color: #000;
+  width: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 24px;
+  margin-bottom: 50px;
+  transition: border-bottom 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.active {
+  border-bottom: 2px solid #000;
+}
+
+.testText {
+  font-size: 50px;
+}

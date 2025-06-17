@@ -1,12 +1,22 @@
 import React, { useState } from "react";
 
 import css from "./Counter.module.css";
+import { useDispatch } from "react-redux";
+import { changeItemQuantity } from "../../store/Slices/cartSlice";
 
-const Counter = ({ quantity: initialQuantity }) => {
+const Counter = ({ index, quantity: initialQuantity }) => {
   const [selectedQuantity, setselectedQuantity] = useState(initialQuantity);
 
+  const dispatch = useDispatch();
+
   function minusQuanity() {
-    setselectedQuantity((prev) => Math.max(1, prev - 1))
+    setselectedQuantity((prev) => Math.max(1, prev - 1));
+    dispatch(changeItemQuantity({ index, quantity: selectedQuantity }));
+  }
+
+  function plusQuanity() {
+    setselectedQuantity(selectedQuantity + 1);
+    dispatch(changeItemQuantity({ index, quantity: selectedQuantity }));
   }
 
   return (
@@ -18,7 +28,9 @@ const Counter = ({ quantity: initialQuantity }) => {
       </button>
       <p>{selectedQuantity}</p>
       <button
-        onClick={() => setselectedQuantity(selectedQuantity + 1)}
+        onClick={() => {
+          plusQuanity();
+        }}
         className={css.countBtn}
       >
         <svg width="16px" height="16px">

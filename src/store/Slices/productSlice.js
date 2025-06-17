@@ -18,7 +18,7 @@ export const getAllProducts = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const { data } = await axios.get("/products");
-      console.log(data);
+    
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
@@ -44,7 +44,7 @@ export const getSingleProduct = createAsyncThunk(
   async (id, thunkApi) => {
     try {
       const { data } = await axios.get(`/products/${id}`);
-      console.log(data);
+
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);

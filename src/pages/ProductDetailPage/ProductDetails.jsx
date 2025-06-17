@@ -24,6 +24,8 @@ const ProductDetails = () => {
   const [colorOptions, setColorOptions] = useState([]);
   const [selectedQuantity, setselectedQuantity] = useState(1);
 
+  const [activeTab, setActiveTab] = useState("active");
+
   useEffect(() => {
     dispatch(getSingleProduct(id));
   }, [dispatch, id]);
@@ -161,6 +163,39 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
+        <div className={css.tabNav}>
+          <button
+            onClick={() => {
+              setActiveTab("details");
+            }}
+            className={clsx(
+              css.tabBtn,
+              activeTab == "details" ? css.active : ""
+            )}
+          >
+            Product Details
+          </button>
+          <button
+            onClick={() => {
+              setActiveTab("reviews");
+            }}
+            className={clsx(
+              css.tabBtn,
+              activeTab == "reviews" ? css.active : ""
+            )}
+          >
+            Rating & Reviews
+          </button>
+        </div>
+        {activeTab === "reviews" ? (
+          <div>
+            <p className={css.testText}>Reviews</p>
+          </div>
+        ) : (
+          <div>
+            <p className={css.testText}>Details</p>
+          </div>
+        )}
       </div>
     </div>
   );

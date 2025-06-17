@@ -1,8 +1,7 @@
 import React from "react";
 
 import { Breadcrumb } from "antd";
-import css from './BreadcrumbComp.module.css'
-
+import css from "./BreadcrumbComp.module.css";
 
 function capitalizeFirstLetter(string) {
   if (!string) return "";
@@ -11,8 +10,8 @@ function capitalizeFirstLetter(string) {
 
 const BreadcrumbComp = ({ category }) => {
   return (
-      <Breadcrumb
-          className={css.bread}
+    <Breadcrumb
+      className={css.bread}
       separator=">"
       items={[
         {

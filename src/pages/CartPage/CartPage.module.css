@@ -228,6 +228,28 @@
   color: rgba(0, 0, 0, 0.6);
 }
 
-.emptyContainer{
+.emptyContainer {
   height: 500px;
+}
+
+.checkOutBtn {
+  cursor: pointer;
+  border: none;
+  border-radius: 62px;
+  padding: 16px 54px;
+  width: 457px;
+  height: 60px;
+  background: #000;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.arrowIcon{
+  margin-left: 15px;
 }
