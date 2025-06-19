@@ -1,0 +1,44 @@
+.reviewsAllDiv{
+  display: flex;
+  justify-content: space-between;
+}
+
+.span {
+  display: flex;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #000;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantityNumber {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 137%;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.filterDiv {
+  display: flex;
+  gap: 10px;
+}
+
+.addReviewBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 62px;
+  padding: 16px 20px;
+  width: 166px;
+  height: 48px;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  background: #000;
+}

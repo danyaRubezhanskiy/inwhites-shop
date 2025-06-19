@@ -11,6 +11,8 @@ import container from "../../container.module.css";
 import BreadcrumbComp from "../../components/Breadcrumb/BreadcrumbComp";
 import { addToCart } from "../../store/Slices/cartSlice";
 import { toast } from "react-toastify";
+import Footer from "../../components/Footer/Footer";
+import ProductReviews from "../../components/ProductReviews/ProductReviews.jsx";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -24,7 +26,7 @@ const ProductDetails = () => {
   const [colorOptions, setColorOptions] = useState([]);
   const [selectedQuantity, setselectedQuantity] = useState(1);
 
-  const [activeTab, setActiveTab] = useState("active");
+  const [activeTab, setActiveTab] = useState("details");
 
   useEffect(() => {
     dispatch(getSingleProduct(id));
@@ -163,39 +165,43 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
-        <div className={css.tabNav}>
-          <button
-            onClick={() => {
-              setActiveTab("details");
-            }}
-            className={clsx(
-              css.tabBtn,
-              activeTab == "details" ? css.active : ""
-            )}
-          >
-            Product Details
-          </button>
-          <button
-            onClick={() => {
-              setActiveTab("reviews");
-            }}
-            className={clsx(
-              css.tabBtn,
-              activeTab == "reviews" ? css.active : ""
-            )}
-          >
-            Rating & Reviews
-          </button>
+        <div className={css.detailsContainer}>
+          <div className={css.tabNav}>
+            <button
+              onClick={() => {
+                setActiveTab("details");
+              }}
+              className={clsx(
+                css.tabBtn,
+                activeTab == "details" ? css.active : ""
+              )}
+            >
+              Product Details
+            </button>
+            <button
+              onClick={() => {
+                setActiveTab("reviews");
+              }}
+              className={clsx(
+                css.tabBtn,
+                activeTab == "reviews" ? css.active : ""
+              )}
+            >
+              Rating & Reviews
+            </button>
+          </div>
+          {activeTab === "reviews" ? (
+            <div>
+              <ProductReviews />
+            </div>
+          ) : (
+            <div>
+              <p className={css.descriptionText}>{product.description}</p>
+            </div>
+          )}
         </div>
-        {activeTab === "reviews" ? (
-          <div>
-            <p className={css.testText}>Reviews</p>
-          </div>
-        ) : (
-          <div>
-            <p className={css.testText}>Details</p>
-          </div>
-        )}
+
+        <Footer></Footer>
       </div>
     </div>
   );

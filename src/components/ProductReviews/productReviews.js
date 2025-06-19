@@ -1,0 +1,88 @@
+const productReviews = [
+  {
+    id: 1,
+    name: "Alice Johnson",
+    rating: 5,
+    comment: "Excellent quality! Totally worth the price.",
+    date: "2024-12-01",
+  },
+  {
+    id: 2,
+    name: "Michael Brown",
+    rating: 4,
+    comment: "Good product, but the delivery was a bit slow.",
+    date: "2025-01-15",
+  },
+  {
+    id: 3,
+    name: "Sara Davis",
+    rating: 5,
+    comment: "Looks exactly like the pictures. Love it!",
+    date: "2025-02-03",
+  },
+  {
+    id: 4,
+    name: "John Smith",
+    rating: 3,
+    comment: "It’s okay, but the size runs a bit small.",
+    date: "2025-02-20",
+  },
+  {
+    id: 5,
+    name: "Emily Wilson",
+    rating: 4,
+    comment: "Great design and comfortable fit.",
+    date: "2025-03-05",
+  },
+  {
+    id: 6,
+    name: "Daniel Garcia",
+    rating: 2,
+    comment: "Material feels cheap. Expected more.",
+    date: "2025-03-18",
+  },
+  {
+    id: 7,
+    name: "Laura Martinez",
+    rating: 5,
+    comment: "Absolutely love it! Will buy again.",
+    date: "2025-04-01",
+  },
+  {
+    id: 8,
+    name: "James Anderson",
+    rating: 4,
+    comment: "Nice product, just a bit overpriced.",
+    date: "2025-04-11",
+  },
+  {
+    id: 9,
+    name: "Olivia Thomas",
+    rating: 5,
+    comment: "Perfect for everyday use. Highly recommend!",
+    date: "2025-04-22",
+  },
+  {
+    id: 10,
+    name: "William Jackson",
+    rating: 3,
+    comment: "Not bad, but I've seen better at this price point.",
+    date: "2025-05-02",
+  },
+  {
+    id: 11,
+    name: "Sophia White",
+    rating: 4,
+    comment: "Very stylish and comfortable.",
+    date: "2025-05-15",
+  },
+  {
+    id: 12,
+    name: "David Harris",
+    rating: 5,
+    comment: "Exceeded expectations. Great buy!",
+    date: "2025-05-28",
+  },
+];
+
+export default productReviews;

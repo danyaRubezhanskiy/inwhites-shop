@@ -160,6 +160,10 @@
   cursor: pointer;
 }
 
+.detailsContainer {
+  margin-bottom: 78px;
+}
+
 .tabNav {
   margin-top: 80px;
   display: flex;
@@ -188,6 +192,11 @@
   border-bottom: 2px solid #000;
 }
 
-.testText {
-  font-size: 50px;
+.descriptionText {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  font-style: italic;
+  line-height: 137%;
+  color: rgba(0, 0, 0);
 }
