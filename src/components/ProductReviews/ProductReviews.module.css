@@ -1,6 +1,7 @@
-.reviewsAllDiv{
+.reviewsAllDiv {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 32px;
 }
 
 .span {
@@ -41,4 +42,71 @@
   font-size: 16px;
   color: #fff;
   background: #000;
+}
+
+.reviewsList {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.reviewsContainer {
+  width: 610px;
+  height: 241px;
+  padding: 28px 32px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.reviewsName {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 110%;
+  color: #000;
+  margin-bottom: 17px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.reviewsText {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 137%;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 24px;
+}
+
+.reviewsDate {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 137%;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.viewBtn {
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 62px;
+  padding: 16px 45px;
+  width: 230px;
+  height: 52px;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000;
+  margin-top: 36px;
+}
+
+.viewBtn:focus {
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
