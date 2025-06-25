@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 
 import container from "../../container.module.css";
 import css from "./ProductReviews.module.css";
-import { Rate } from "antd";
+import { Dropdown, Rate, Space } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductReviews } from "../../store/Slices/reviewSlice";
+import { DownOutlined } from "@ant-design/icons";
 
 const ProductReviews = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,13 @@ const ProductReviews = () => {
     setShowAll((prev) => !prev);
   };
 
+  const sortOptions = [
+    { label: "Latest", key: "latest" },
+    { label: "Oldest", key: "oldest" },
+    { label: "Highest Rating", key: "highest" },
+    { label: "Lowest Rating", key: "lowest" },
+  ];
+
   return (
     <section className={clsx(container.container, css.section)}>
       <div className={css.reviewsAllDiv}>
@@ -34,6 +42,17 @@ const ProductReviews = () => {
           <svg width="48" height="48px">
             <use href="../../../public/icons/filter.svg#filter"></use>
           </svg>
+          <Dropdown
+            menu={{ items, className: "custom-dropdown-menu" }}
+            trigger={["click"]}
+          >
+            <a onClick={(e) => e.preventDefault()}>
+              <Space>
+                Click me
+                <DownOutlined />
+              </Space>
+            </a>
+          </Dropdown>
           <button className={css.addReviewBtn}>Write a Review</button>
         </div>
       </div>

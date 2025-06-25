@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTopSelling } from "../../../store/Slices/productSlice";
 import { Rate } from "antd";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
 function TopSelling() {
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ function TopSelling() {
       <h2 className={css.title}>Top Selling</h2>
       <ul className={css.list}>
         {visibleProducts.map((product) => (
-          <li key={product.id} className={css.listItem}>
+          <Link to={`/item/${product.id}`}>
             <div className={css.card}>
               <img
                 className={css.img}
@@ -47,7 +48,7 @@ function TopSelling() {
               allowHalf={true}
             />
             <p className={css.itemPrice}>${Math.round(product.price)}</p>
-          </li>
+          </Link>
         ))}
       </ul>
       <button className={css.btn} onClick={tooggleShow}>
