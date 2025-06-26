@@ -1,0 +1,20 @@
+.filterDropdownBtn {
+  border-radius: 62px;
+  padding: 16px 20px;
+  width: 120px;
+  height: 48px;
+  background: #f0f0f0;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000;
+}
+
+.filterDropdownBtn:hover {
+  background-color: #f5f5f5;
+}
