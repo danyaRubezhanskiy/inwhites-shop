@@ -7,6 +7,10 @@ const ProductDetails = lazy(() =>
   import("./pages/ProductDetailPage/ProductDetails.jsx")
 );
 const CartPage = lazy(() => import("./pages/CartPage/CartPage.jsx"));
+const RegisterPage = lazy(() =>
+  import("./pages/RegisterPage/RegisterPage.jsx")
+);
+const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage.jsx"));
 
 function App() {
   return (
@@ -15,6 +19,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/item/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<CartPage></CartPage>} />
+        <Route path="/register" element={<RegisterPage></RegisterPage>} />
+        <Route path="/login" element={<LoginPage></LoginPage>} />
       </Routes>
       <ToastContainer
         position="top-right"

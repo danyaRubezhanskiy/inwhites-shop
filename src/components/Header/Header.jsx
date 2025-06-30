@@ -76,7 +76,7 @@ const Header = () => {
         </form>
 
         <div className={css.iconsContainer}>
-          <Link to="/">
+          <Link to="/login">
             <svg className={css.icon} width="24" height="24" aria-hidden="true">
               <use href="../../../public/icons/symbol-defs.svg#icon-Frame-1" />
             </svg>

@@ -1,14 +1,13 @@
 import clsx from "clsx";
-import React, { use, useEffect, useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import container from "../../container.module.css";
 import css from "./ProductReviews.module.css";
-import { Dropdown, Input, message, Modal, Rate, Space } from "antd";
+import { Dropdown, Input, Modal, Rate, Space } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { getProductReviews } from "../../store/Slices/reviewSlice";
+import { addReview, getProductReviews } from "../../store/Slices/reviewSlice";
 import { DownOutlined } from "@ant-design/icons";
 import ReviewsFilterDropdown from "../ReviewsFilterDropdown/ReviewsFilterDropdown";
-import { set } from "react-hook-form";
+
 import TextArea from "antd/es/input/TextArea";
 
 const ProductReviews = () => {
@@ -52,6 +51,23 @@ const ProductReviews = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const handleOK = () => {
+    const newReview = {
+      id: Date.now(),
+      name,
+      rating,
+      comment,
+      date: new Date().toISOString().slice(0, 10),
+    };
+
+    dispatch(addReview(newReview));
+
+     setName("");
+  setComment("");
+  setRating(1);
+  setIsModalOpen(false);
   };
 
   return (
@@ -106,7 +122,12 @@ const ProductReviews = () => {
           {!showAll ? "Load More Reviews" : "Hide All"}
         </button>
       </div>
-      <Modal closable="true" open={isModalOpen} onCancel={closeModal}>
+      <Modal
+        onOk={handleOK}
+        closable="true"
+        open={isModalOpen}
+        onCancel={closeModal}
+      >
         <div className={css.modalDiv}>
           <h3>Leave your comment:</h3>
           <Input

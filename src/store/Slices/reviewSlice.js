@@ -9,13 +9,10 @@ const initialState = {
   error: null,
 };
 
-export const getReviews = createAsyncThunk(
-  "reviews/getReviews",
-  async () => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    return reviews;
-  }
-);
+export const getReviews = createAsyncThunk("reviews/getReviews", async () => {
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  return reviews;
+});
 
 export const getProductReviews = createAsyncThunk(
   "reviews/getProductReviews",
@@ -25,10 +22,22 @@ export const getProductReviews = createAsyncThunk(
   }
 );
 
+export const addProductReviews = createAsyncThunk(
+  "reviews/addProductReviews",
+  async () => {
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    return productReviews;
+  }
+);
+
 const reviewsSlice = createSlice({
   name: "reviews",
   initialState,
-  reducer: {},
+  reducers: {
+    addReview: (state, action) => {
+      state.productReviews.push(action.payload);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getReviews.pending, (state) => {
@@ -55,5 +64,7 @@ const reviewsSlice = createSlice({
       });
   },
 });
+
+export const { addReview } = reviewsSlice.actions;
 
 export default reviewsSlice.reducer;
