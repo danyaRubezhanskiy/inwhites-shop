@@ -1,9 +1,53 @@
-import React from "react";
-
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import { Link } from "react-router-dom";
 import css from "./LoginPage.module.css";
+import Header from "../../components/Header/Header";
 
-const LoginPage = () => {
-  return <div>dfsaf</div>;
-};
+const LoginSchema = Yup.object().shape({
+  email: Yup.string().email("Invalid email").required("Reqiered"),
+  password: Yup.string().min(6, "Minimum 6 characters").required("Required"),
+});
 
-export default LoginPage;
+export default function LoginPage() {
+  const handleSubmit = (values) => {
+    console.log("Login:", values);
+    // dispatch(login(values)) или axios.post() и т.п.
+  };
+
+  return (
+    <div>
+      <Header></Header>
+
+      <div className={css.container}>
+        <h2>Sign In</h2>
+        <Formik
+          initialValues={{ email: "", password: "" }}
+          validationSchema={LoginSchema}
+          onSubmit={handleSubmit}
+        >
+          <Form className={css.form}>
+            <label>Email</label>
+            <Field name="email" type="email" />
+            <ErrorMessage name="email" component="div" className={css.error} />
+
+            <label>Password</label>
+            <Field name="password" type="password" />
+            <ErrorMessage
+              name="password"
+              component="div"
+              className={css.error}
+            />
+
+            <button className={css.btn} type="submit">
+              Sign In
+            </button>
+          </Form>
+        </Formik>
+        <p className="">
+          Don't have an account? <Link to="/register">Sign Up</Link>
+        </p>
+      </div>
+    </div>
+  );
+}

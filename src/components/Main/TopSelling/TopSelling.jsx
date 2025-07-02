@@ -29,7 +29,7 @@ function TopSelling() {
       <h2 className={css.title}>Top Selling</h2>
       <ul className={css.list}>
         {visibleProducts.map((product) => (
-          <Link to={`/item/${product.id}`}>
+          <Link key={product.id} to={`/item/${product.id}`}>
             <div className={css.card}>
               <img
                 className={css.img}
