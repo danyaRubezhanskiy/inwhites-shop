@@ -3,6 +3,8 @@ import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import css from "./LoginPage.module.css";
 import Header from "../../components/Header/Header";
+import { useDispatch } from "react-redux";
+import { apiLogin } from "../../store/Slices/authSlice";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Reqiered"),
@@ -10,9 +12,10 @@ const LoginSchema = Yup.object().shape({
 });
 
 export default function LoginPage() {
-  const handleSubmit = (values) => {
-    console.log("Login:", values);
-    // dispatch(login(values)) или axios.post() и т.п.
+  const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+    dispatch(apiLogin({ username: "mor_2314", password: "83r5^_" }));
   };
 
   return (

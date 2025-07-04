@@ -19,15 +19,13 @@ export default function RegisterPage() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values) => {
-    const newUser = {
+    const formData = {
       username: values.name,
       email: values.email,
       password: values.password,
     };
-    console.log("Register:", newUser);
-    dispatch(apiRegister(newUser));
+    dispatch(apiRegister(formData));
   };
-
   return (
     <div>
       <Header></Header>
