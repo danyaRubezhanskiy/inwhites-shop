@@ -7,23 +7,26 @@ import "./CustomDropdown.css";
 
 import container from "../../container.module.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const selectIsLoggedIn = useSelector((state) => state.auth.token);
+
   const items = [
     {
-      label: <a href="ht">Prada</a>,
+      label: <a href="/">Prada</a>,
       key: "0",
     },
     {
-      label: <a href="">Gucci</a>,
+      label: <a href="/">Gucci</a>,
       key: "1",
     },
     {
-      label: <a href="">Versace</a>,
+      label: <a href="/">Versace</a>,
       key: "2",
     },
     {
-      label: <a href="">Zara</a>,
+      label: <a href="/">Zara</a>,
       key: "3",
     },
   ];
@@ -48,7 +51,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a className={css.linkText} href="">
+              <a className={css.linkText} href="#newArrivals">
                 New Arrivals
               </a>
             </li>
@@ -76,16 +79,31 @@ const Header = () => {
         </form>
 
         <div className={css.iconsContainer}>
-          <Link to="/login">
-            <svg className={css.icon} width="24" height="24" aria-hidden="true">
-              <use href="../../../public/icons/symbol-defs.svg#icon-Frame-1" />
-            </svg>
-          </Link>
-          <Link to="/cart">
-            <svg className={css.icon} width="24" height="24" aria-hidden="true">
-              <use href="../../../public/icons/symbol-defs.svg#icon-Frame" />
-            </svg>
-          </Link>
+          <>
+            {selectIsLoggedIn ? (
+              <Link to="/cart">
+                <svg
+                  className={css.icon}
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                >
+                  <use href="../../../public/icons/symbol-defs.svg#icon-Frame" />
+                </svg>
+              </Link>
+            ) : (
+              <Link to="/login">
+                <svg
+                  className={css.icon}
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                >
+                  <use href="../../../public/icons/symbol-defs.svg#icon-Frame-1" />
+                </svg>
+              </Link>
+            )}
+          </>
         </div>
       </div>
     </header>

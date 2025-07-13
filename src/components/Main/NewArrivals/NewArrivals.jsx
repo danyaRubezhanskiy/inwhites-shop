@@ -24,7 +24,10 @@ function NewArrivals() {
   };
 
   return (
-    <section className={clsx(container.container, css.section)}>
+    <section
+      id="newArrivals"
+      className={clsx(container.container, css.section)}
+    >
       <h2 className={css.title}>New Arrivals</h2>
       <ul className={css.list}>
         {visibleProducts.map((product) => (
